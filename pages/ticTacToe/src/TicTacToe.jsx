@@ -1,8 +1,9 @@
 import { useState } from 'react';
+import './styles.css';
 
 function Square({ value, onSquareClick }) {
   return (
-    <button className="square" onClick={onSquareClick}>
+    <button className={`square ${value ? value.toLowerCase() : ''}`} onClick={onSquareClick}>
       {value}
     </button>
   );
@@ -30,9 +31,14 @@ function Board({ xIsNext, squares, onPlay }) {
     status = 'Next player: ' + (xIsNext ? 'X' : 'O');
   }
 
+  let statusClassName = 'status';
+  if (!winner) {
+    statusClassName += xIsNext ? ' next-x' : ' next-o';
+  }
+
   return (
     <>
-      <div className="status">{status}</div>
+      <div className={statusClassName}>{status}</div>
       <div className="board-row">
         <Square value={squares[0]} onSquareClick={() => handleClick(0)} />
         <Square value={squares[1]} onSquareClick={() => handleClick(1)} />
@@ -77,7 +83,7 @@ export default function Game() {
     }
     return (
       <li key={move}>
-        <button onClick={() => jumpTo(move)}>{description}</button>
+        <button className="game-move" onClick={() => jumpTo(move)}>{description}</button>
       </li>
     );
   });
