@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import BrowserRouter, Route, and Switch
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Layout from './Layout';
 import HomePage from "../pages/HomePage";
 import RPSGame from "../pages/rps/RPS-Game";
@@ -12,11 +12,11 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Router>
       <Layout>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/rps" component={RPSGame} />
-          <Route path="/tictactoe" component={TicTacToeGame} />
-        </Switch>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/rps" element={<RPSGame />} />
+          <Route path="/tictactoe" element={<TicTacToeGame />} />
+        </Routes>
       </Layout>
     </Router>
   </React.StrictMode>
