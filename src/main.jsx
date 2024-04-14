@@ -1,7 +1,6 @@
-// src/main.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'; // Import createBrowserRouter and RouterProvider
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'; // Import BrowserRouter, Route, and Switch
 import Layout from './Layout';
 import HomePage from "../pages/HomePage";
 import RPSGame from "../pages/rps/RPS-Game";
@@ -9,31 +8,16 @@ import TicTacToeGame from "../pages/ticTacToe/src/TicTacToe";
 import './index.css';
 import "../components/Navigation.css";
 
-const router = createBrowserRouter([
-  {
-    path: `/`,
-    element: <Layout />,
-    children: [
-      {
-        index: true,
-        element: <HomePage />,
-      },
-      {
-        path: "/rps",
-        element: <RPSGame />,
-      },
-      {
-        path: "/tictactoe",
-        element: <TicTacToeGame />,
-      },
-    ],
-  },
-], { basename: import.meta.env.BASE_URL });
-
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}>
-      <Layout />
-    </RouterProvider>
+    <Router>
+      <Layout>
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route path="/rps" component={RPSGame} />
+          <Route path="/tictactoe" component={TicTacToeGame} />
+        </Switch>
+      </Layout>
+    </Router>
   </React.StrictMode>
 );
