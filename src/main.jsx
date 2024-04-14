@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { HashRouter as Router, Routes, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Layout from './Layout';
 import HomePage from "../pages/HomePage";
 import RPSGame from "../pages/rps/RPS-Game";
@@ -10,7 +10,7 @@ import "../components/Navigation.css";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <Router basename="/">
+    <Router basename={process.env.PUBLIC_URL}>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
