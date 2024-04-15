@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; 
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Layout from './Layout';
 import HomePage from "../pages/HomePage";
 import RPSGame from "../pages/rps/RPS-Game";
@@ -10,7 +10,7 @@ import "../components/Navigation.css";
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename={import.meta.env.BASE_URL}>
+    <Router basename={process.env.PUBLIC_URL}>
       <Layout>
         <Routes>
           <Route path="/" element={<HomePage />} />
@@ -18,6 +18,6 @@ ReactDOM.createRoot(document.getElementById('root')).render(
           <Route path="/tictactoe" element={<TicTacToeGame />} />
         </Routes>
       </Layout>
-    </BrowserRouter>
+    </Router>
   </React.StrictMode>
 );
