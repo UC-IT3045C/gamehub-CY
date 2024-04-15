@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client'; // Updated import
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import Layout from './Layout';
 import HomePage from "../pages/HomePage";
@@ -8,7 +8,11 @@ import TicTacToeGame from "../pages/ticTacToe/src/TicTacToe";
 import './index.css';
 import "../components/Navigation.css";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root');
+
+const rootElement = createRoot(root);
+
+rootElement.render(
   <React.StrictMode>
     <Router basename={import.meta.env.PUBLIC_URL}>
       <Layout>
