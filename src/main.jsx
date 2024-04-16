@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from './Layout';
 import HomePage from "../pages/HomePage";
 import RPSGame from "../pages/rps/RPS-Game";
+import Wordle from "../pages/wordle/wordle";
 import TicTacToeGame from "../pages/ticTacToe/src/TicTacToe";
 import './index.css';
 import "../components/Navigation.css";
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         path: "/tictactoe",
         element: <TicTacToeGame />,
       },
+      {
+        path: "/wordle",
+        element: <Wordle />,
+      }
     ],
   },
 ], { basename: import.meta.env.BASE_URL });
