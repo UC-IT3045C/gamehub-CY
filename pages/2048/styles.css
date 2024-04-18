@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+}
+
+.board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  background-color: #faf8ef;
+  font-family: Arial, sans-serif;
+}
+.row {
+  display: flex;
+}
+
+.tile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  margin: 5px;
+  color: #776e65;
+  background-color: #eee4da;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 3px;
+}
+
+.tile-0 {
+  background-color: #cdc1b4;
+  color: #cdc1b4;
+}
+
+.tile-2 {
+  background-color: #eee4da;
+}
+
+.tile-4 {
+  background-color: #ede0c8;
+}
+
+.tile-8 {
+  background-color: #f2b179;
+}
+
+.tile-16 {
+  background-color: #f59563;
+}
+
+.tile-32 {
+  background-color: #f67c5f;
+}
+
+.tile-64 {
+  background-color: #f65e3b;
+}
+
+.tile-128 {
+  background-color: #edcf72;
+}
+
+.tile-256 {
+  background-color: #edcc61;
+}
+
+.tile-512 {
+  background-color: #edc850;
+}
+
+.tile-1024 {
+  background-color: #edc53f;
+}
+
+.tile-2048 {
+  background-color: #edc22e;
+}
+
+.game-over {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #776e65;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2em;
+  color: #776e65;
+  padding: 20px 0;
+}
