@@ -42,27 +42,3 @@ body {
     transition: all 0.2s ease-in-out;
 }
 
-.nav-links li a::before {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: hsl(261deg 80% 90%);
-    z-index: -1;
-    transition: all 0.2s ease-in-out;
-}
-
-.nav-links li a:hover {
-    color: hsl(302deg 70% 5% / 90%);
-}
-
-.nav-links li a:hover::before {
-    top: 0;
-    left: 0;
-}
-
-.nav-links li:has(+ li:hover) a::before {
-    left: 100%;
-}
