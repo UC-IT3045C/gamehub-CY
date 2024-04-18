@@ -10,7 +10,7 @@ const Navigation = () => {
         <li><Link to="/rps">Rock Paper Scissors</Link></li>
         <li><Link to="/tictactoe">Tic Tac Toe</Link></li>
         <li><Link to="/Wordle">Wordle</Link></li>
-        <li><Link to="/2048">2048</Link></li> {/* Add this line */}
+        <li><Link to="/2048">2048</Link></li>
       </ul>
     </nav>
   );

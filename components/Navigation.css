@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 body {
-    padding-top: 60px; /* Adjust this value based on the actual height of your navbar */
+    padding-top: 60px;
 }
 
 .navbar {
@@ -40,5 +40,31 @@ body {
     z-index: 10;
     overflow: hidden;
     transition: all 0.2s ease-in-out;
+    display: inline-block;
 }
 
+.nav-links li a:hover {
+    transform: scale(1.1);
+}
+
+.nav-links li a {
+    color: hsl(261deg 70% 80%);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
+    display: inline-block;
+}
+
+.nav-links li a:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: hsl(0deg 70% 80%);
+}
+
+.nav-links li a:hover {
+    transform: scale(2.5) rotate(5deg);
+    color: hsl(0deg 70% 80%);
+}
